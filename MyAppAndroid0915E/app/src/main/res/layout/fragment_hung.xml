@@ -1,13 +1,40 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    tools:context=".ProfileFragment"
+    android:orientation="vertical"
+    >
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_name"
+        android:hint="Name"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="100dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_email"
+        android:hint="Email"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_sdt"
+        android:hint="NumberPhone"
+        android:textSize="20dp"
+        android:gravity="center"
+        />
 
-</FrameLayout>
+
+</LinearLayout>
