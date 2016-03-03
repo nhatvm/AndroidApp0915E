@@ -23,6 +23,13 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        LoginFragment loginFragment = new LoginFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.drawer_layout, loginFragment).commit();
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -95,8 +102,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
             FragmentManager manager = getSupportFragmentManager();
-            FragmentTransaction transaction =manager.beginTransaction();
-            ProfileFragment profileFragment= new ProfileFragment();
+            FragmentTransaction transaction = manager.beginTransaction();
+            ProfileFragment profileFragment = new ProfileFragment();
             transaction.add(R.id.rlt_rlt, profileFragment);
             transaction.addToBackStack(null);
             transaction.commit();

@@ -28,15 +28,25 @@ public class LoginFragment extends android.support.v4.app.Fragment {
         Button bt_login = (Button) view.findViewById(R.id.bt_login);
         Button bt_regint = (Button) view.findViewById(R.id.bt_register);
 
+
         FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        HomeFragment homeFragment=new HomeFragment();
-        fragmentTransaction.replace(homeFragment);
+        final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        final HomeFragment homeFragment = new HomeFragment();
+        final TestFragment testFragment = new TestFragment();
+
 
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                fragmentTransaction.replace(R.id.drawer_layout, homeFragment);
+                fragmentTransaction.commit();
+            }
+        });
+        bt_regint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentTransaction.replace(R.id.drawer_layout, testFragment);
+                fragmentTransaction.commit();
             }
         });
         return view;
