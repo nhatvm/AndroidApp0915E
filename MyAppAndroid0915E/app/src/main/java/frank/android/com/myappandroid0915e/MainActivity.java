@@ -3,6 +3,9 @@ package frank.android.com.myappandroid0915e;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -91,7 +94,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
-
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction =manager.beginTransaction();
+            ProfileFragment profileFragment= new ProfileFragment();
+            transaction.add(R.id.rlt_rlt, profileFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
